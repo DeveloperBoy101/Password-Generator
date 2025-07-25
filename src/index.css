@@ -1,0 +1,50 @@
+/* globals.css or your main css file */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* globals.css */
+
+.youtube-slider {
+  --progress-percent: 0%; /* CSS variable to hold progress */
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+  width: 100%;
+}
+
+/* Thumb Styling */
+.youtube-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 12px;
+  width: 12px;
+  background-color: #1cb4d6; /* YouTube Red */
+  border-radius: 9999px;
+  border: none;
+  /* Vertically center the thumb on the track */
+  margin-top: -4px;
+}
+
+.youtube-slider::-moz-range-thumb {
+  height: 12px;
+  width: 12px;
+  background-color: #ff0000;
+  border-radius: 9999px;
+  border: none;
+}
+
+/* Track Styling */
+.youtube-slider::-webkit-slider-runnable-track {
+  height: 4px;
+  border-radius: 9999px;
+  /* The magic: a gradient that fills based on the --progress-percent variable */
+  background: linear-gradient(to right, #ff0000 var(--progress-percent), #646464 var(--progress-percent));
+}
+
+.youtube-slider::-moz-range-track {
+  height: 4px;
+  border-radius: 9999px;
+  background: linear-gradient(to right, #ff0000 var(--progress-percent), #646464 var(--progress-percent));
+}
